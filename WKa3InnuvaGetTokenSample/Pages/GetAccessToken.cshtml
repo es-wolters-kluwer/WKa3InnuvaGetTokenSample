@@ -1,0 +1,48 @@
+﻿@page
+@model WKa3InnuvaGetTokenSample.Pages.GetAccessTokenModel
+@{
+    ViewData["Title"] = "Get Access-Token OAuth WKA";
+}
+<div class="p-5 mb-4 bg-light rounded-3">
+    <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold">@Model.Name has obtenido tu access-token.</h1>
+        <p class="fs-4">Se ha autenticado correctamente en el servidor de WKA y has obtenido un access-token para poder realizar peticiones a las APIs de <b>a3innuva</b>.</p>
+    </div>
+</div>
+<div class="container">    
+    <h4>WKA OAuth information</h4>            
+    <div class="form-group">
+        <label for="accessToken" class="form-label">Access-token</label>
+        <textarea class="form-control" id="accessToken" rows="12" readonly>@Model.AccessToken</textarea>
+    </div>
+    <div class="form-group">
+        <label for="refreshToken" class="form-label">Refresh-Token</label>
+        <input type="text" class="form-control" id="refreshToken" value="@Model.RefreshToken" readonly/>
+    </div>
+    <div class="form-group">
+        <label for="expToken" class="form-label">Access-token expiration date</label>
+        <input type="datetime" class="form-control" id="expToken" value="@Model.AccessTokenExpiration" readonly />
+    </div>
+    <div class="form-group">
+        <label for="expToken" class="form-label">Access-token Authentication date</label>
+        <input type="datetime" class="form-control" id="expToken" value="@Model.AuthenticationDateTime" readonly />
+    </div>
+    <div class="form-group">
+        <label for="refreshToken" class="form-label">WKIdCDA</label>
+        <input type="text" class="form-control" id="refreshToken" value="@Model.WKIdCDA" readonly />
+    </div>
+    <div class="form-group">
+        <label for="refreshToken" class="form-label">WKUserId</label>
+        <input type="text" class="form-control" id="refreshToken" value="@Model.WKUserId" readonly />
+    </div>
+    <div class="form-group">
+        <label for="refreshToken" class="form-label">Other info</label>
+        <input type="text" class="form-control" id="refreshToken" value="@Model.OtherInfo" readonly />
+    </div>
+</div>
+<p></p>
+<div class="form-group">
+    <form asp-page-handler="Logout" method="post">
+        <button class="btn btn-primary btn-lg">Logout</button>
+    </form>
+</div>

@@ -1,0 +1,27 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+    <div class="p-5 mb-4 bg-light rounded-3">
+        <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold">¡Bienvenido a3developer!</h1>
+            <p class="fs-4">En esta aplicación ASP.NET Core de ejemplo te mostramos cómo funciona la autenticación OAuth 2.0 con OpenIdConnect.</p>
+        </div>
+    </div>
+
+    <p>Es imprescindible disponer de un client OAuth (puedes solicitarlo <a href="https://forms.office.com/r/0jdxS8vyWN" target="_blank">aquí</a>) y una Wolters Kluwer Account que tenga acceso a <b>a3innuva</b>. Si necesitás más información, puedes visitar nuestro <a href="https://a3developers.wolterskluwer.es/">developer portal</a></p>
+    <p>Antes de obtener el token, edita el fichero <code>appsettings.json</code> para ajustarlo a tu configuración:</p>
+    <ul>
+        <li><b><code>ClientId</code></b> especifica el nombre del client OAuth que te hemos asignado (p.e. <code>WK.ES.A3WebApi.12345</code>)</li>
+        <li><b><code>ClientSecret</code></b> secret del client OAuht (p.e. <code>dyd4dktgzdFnfPIm</code>)</li>
+        <li><b><code>AuthenticationScopes</code></b> los scopes varían en función de la aplicación a3innuva a la que quieres conectar:<br />
+            &nbsp;<b>a3innuva | nómina</b>: <code>offline_access+openid+IDInfo+WK.ES.A3EquipoContex</code><br />
+            &nbsp;<b>a3innuva | contabilidad</b>: <code>offline_access+openid+WK.ES.NEWPOL.COR.API+WK.ES.NEWPOL.ACC.API+WK.ES.NEWPOL.MNG.API+WK.ES.Webhooks</code>
+        </li>
+    </ul>
+    <p>La configuración actual de tu <code>appsettings.json</code> es la siguiente:</p>
+    <pre><code>@Model.jsonConfiguration</code></pre>
+    <p>Si es correcta, puedes realizar la llamada para obtener el access-token:</p>
+    <a asp-area="" asp-page="/GetAccessToken"><button class="btn btn-primary btn-lg" type="button">Get Access Token</button></a>
+
