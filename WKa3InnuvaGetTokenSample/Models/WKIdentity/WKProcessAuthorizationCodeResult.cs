@@ -11,7 +11,7 @@ namespace WKa3InnuvaGetTokenSample.Models.WKIdentity
         /// <value>
         /// The claims.
         /// </value>
-        public IList<Claim> Claims { get; set; }
+        public IList<Claim>? Claims { get; set; }
 
         /// <summary>
         /// Gets or sets the access token response.
@@ -19,7 +19,7 @@ namespace WKa3InnuvaGetTokenSample.Models.WKIdentity
         /// <value>
         /// The access token response.
         /// </value>
-        public TokenResponse AccessTokenResponse { get; set; }
+        public TokenResponse? AccessTokenResponse { get; set; }
 
     }
 }

@@ -8,7 +8,7 @@ namespace WKa3InnuvaGetTokenSample.Pages
 {    
     public class IndexModel : PageModel
     {
-        public string jsonConfiguration { get; set; }
+        public string? jsonConfiguration { get; set; }
         private readonly IConfiguration _configuration;
 
         public IndexModel(IConfiguration configuration)
